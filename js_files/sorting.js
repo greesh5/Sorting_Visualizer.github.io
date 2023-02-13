@@ -1,3 +1,4 @@
+// swap function util for sorting algorithms takes input of 2 DOM elements with .style.height feature
 function swap(el1, el2) {
     console.log('In swap()');
     
@@ -52,13 +53,14 @@ function waitforme(milisec) {
     }) 
 }
 
-/**
- * your task is to add event listener to the size slider and create new array using createNewArray(size) function
- */
 // Selecting size slider from DOM
 let arraySize = document.querySelector('#arr_sz');
-// add Event listener to update the bars on the UI
 
+// Event listener to update the bars on the UI
+arraySize.addEventListener('input', function(){
+    console.log(arraySize.value, typeof(arraySize.value));
+    createNewArray(parseInt(arraySize.value));
+});
 
 // Default input for waitforme function (260ms)
 let delay = 260;
@@ -79,24 +81,28 @@ let array = [];
 createNewArray();
 
 // To create new array input size of array
-/**
- * Complete this method to create Bars of random heights
- */
 function createNewArray(noOfBars = 60) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
-    // create an array of random numbers 
+    // creating an array of random numbers 
     array = [];
+    for (let i = 0; i < noOfBars; i++) {
+        array.push(Math.floor(Math.random() * 250) + 1);
+    }
+    console.log(array);
+
     // select the div #bars element
     const bars = document.querySelector("#bars");
 
     // create multiple element div using loop and adding class 'bar col'
     for (let i = 0; i < noOfBars; i++) {
-        //create element
-        // update height of bar
-        // add appropriate styling class to the element
-        // add element to the DOM by appending to the div #bars
+        const bar = document.createElement("div");
+        bar.style.height = `${array[i]*2}px`;
+        bar.classList.add('bar');
+        bar.classList.add('flex-item');
+        bar.classList.add(`barNo${i}`);
+        bars.appendChild(bar);
     }
 }
 

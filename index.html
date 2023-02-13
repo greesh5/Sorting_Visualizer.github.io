@@ -16,16 +16,19 @@
                 <button type="button" class="btn btn-outline-success btn-dark newArray">New Array</button>
             </div>
             <div class="col" id="input">
+                <span id="size">Size
+                    <input id="arr_sz" type="range" min="5" max="100" step=1 value=60>
+                </span>
                 <span id="speed">Speed
                     <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
                 </span>
             </div>
-            <div class="">
-                <button type="button" class="BubbleSort">Bubble Sort</button>
-                <button type="button" class="selectionSort">Selection Sort</button>
-                <button type="button" class="InsertionSort">InsertionSort</button>
-                <button type="button" class="quickSort">quickSort</button>
-                <button type="button" class="MergeSort">MergeSort</button>
+            <div class="col gap-2 d-sm-flex justify-content-end">
+                <button type="button" class="btn btn-outline-primary btn-dark bubbleSort">Bubble Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark selectionSort">Selection Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark insertionSort">Insertion Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark quickSort">Quick Sort</button>
+                <button type="button" class="btn btn-outline-primary btn-dark mergeSort">Merge Sort</button>
             </div>
         </div>
     </nav>
